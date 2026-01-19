@@ -269,6 +269,7 @@ def create_ai_prompt(e, task_description=None):
 def judge_with_ai(e, custom_prompt=None):
     """AI를 사용하여 기사를 판단"""
     if not USE_AI_JUDGMENT:
+        print("[WARN] USE_AI_JUDGMENT가 False로 설정되어 있습니다.")
         return None
     
     if AI_JUDGMENT_PROMPT is None:
@@ -279,11 +280,13 @@ def judge_with_ai(e, custom_prompt=None):
     if AI_PROVIDER == "anthropic":
         if not ANTHROPIC_API_KEY:
             print("[WARN] ANTHROPIC_API_KEY가 설정되지 않았습니다.")
+            print(f"[DEBUG] AI_PROVIDER: {AI_PROVIDER}, ANTHROPIC_API_KEY 길이: {len(ANTHROPIC_API_KEY) if ANTHROPIC_API_KEY else 0}")
             return None
         print(f"[DEBUG] AI Provider: Anthropic, Model: {ANTHROPIC_MODEL}")
     else:
         if not OPENAI_API_KEY:
             print("[WARN] OPENAI_API_KEY가 설정되지 않았습니다.")
+            print(f"[DEBUG] AI_PROVIDER: {AI_PROVIDER}, OPENAI_API_KEY 길이: {len(OPENAI_API_KEY) if OPENAI_API_KEY else 0}")
             return None
         print(f"[DEBUG] AI Provider: OpenAI, Model: {OPENAI_MODEL}")
     
