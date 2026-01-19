@@ -1,1 +1,0 @@
-# security-News-sender-test
