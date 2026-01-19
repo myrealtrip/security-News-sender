@@ -29,7 +29,6 @@ jobs:
           name: state-file
           path: .
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          fail-on-collision: false
         continue-on-error: true
       
       - name: Run security news bot
