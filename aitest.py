@@ -33,7 +33,7 @@ if not SLACK_WEBHOOK:
 
 # AI API 설정
 USE_AI_JUDGMENT = os.environ.get("USE_AI_JUDGMENT", "true").lower() == "true"
-AI_PROVIDER = os.environ.get("AI_PROVIDER", "openai").lower()  # "openai" or "anthropic"
+AI_PROVIDER = os.environ.get("AI_PROVIDER", "anthropic").lower()  # "openai" or "anthropic"
 
 # OpenAI 설정
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
