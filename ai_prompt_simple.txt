@@ -30,10 +30,11 @@
 → ⚠️ **허용 제품 목록** (이 목록에 있는 제품만 허용):
   - Adobe Reader (또는 Adobe Acrobat Reader)
   - FortiGate Firewall (또는 FortiGate, FortiOS)
-  - Windows (또는 Microsoft Windows, Windows 10, Windows 11)
+  - Windows (또는 Microsoft Windows, Windows 10, Windows 11) - ⚠️ **중요**: Windows 프로토콜/서비스 취약점도 포함 (예: NTLM, SMB, RDP 등)
   - Office 365 (또는 Microsoft Office 365) - ⚠️ **중요**: Office 2016, Office 2019, Office 2021 등 설치형은 제외, Office 365만 허용
 → ⚠️ **판단 원칙**:
   - 위 허용 목록에 명시된 4개 제품만 허용
+  - **Windows 관련**: Windows 자체 취약점뿐만 아니라 Windows 프로토콜/서비스 취약점도 포함 (NTLM, SMB, RDP, Kerberos 등)
   - **이 목록에 없는 모든 제품은 제외** (예: FortiSIEM, ColdFusion, Ruckus, ServiceNow, VMware, Airoha, HPE, Trend Micro, MongoDB, n8n, Telegram, Facebook, Instagram 등)
   - "Adobe"만 있고 "Reader"가 없으면 SKIP (ColdFusion, Photoshop 등일 가능성)
   - "Fortinet"만 있고 "FortiGate"가 없으면 SKIP (FortiSIEM 등일 가능성)
