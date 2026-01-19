@@ -60,9 +60,10 @@ AI가 다음 기준으로 기사를 판단합니다:
 
 2. **우리 회사에서 사용하는 서비스 취약점** (80-100점)
    - Adobe Reader
-   - FortiGate Firewall
    - Windows
+   - macOS
    - Office 365
+   - 보안 솔루션
 
 3. **보안 인식/교육 기사** (임시 허용)
 
