@@ -33,7 +33,8 @@ if not SLACK_WEBHOOK:
 
 # AI API 설정
 USE_AI_JUDGMENT = os.environ.get("USE_AI_JUDGMENT", "true").lower() == "true"
-AI_PROVIDER = os.environ.get("AI_PROVIDER", "anthropic").lower()  # "openai" or "anthropic"
+AI_PROVIDER_RAW = os.environ.get("AI_PROVIDER", "anthropic")
+AI_PROVIDER = AI_PROVIDER_RAW.strip().lower()  # "openai" or "anthropic"
 
 # OpenAI 설정
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
@@ -276,8 +277,10 @@ def judge_with_ai(e, custom_prompt=None):
         print("[ERROR] AI 프롬프트 파일이 없습니다.")
         return None
     
-    # AI_PROVIDER 값 확인 및 출력
-    print(f"[DEBUG] AI_PROVIDER 값: '{AI_PROVIDER}' (타입: {type(AI_PROVIDER).__name__})")
+    # AI_PROVIDER 값 확인 및 출력 (마스킹 방지를 위해 길이와 첫 글자만 표시)
+    provider_display = f"{AI_PROVIDER[0]}{'*' * (len(AI_PROVIDER) - 2) if len(AI_PROVIDER) > 2 else '*'}{AI_PROVIDER[-1]}" if len(AI_PROVIDER) > 1 else AI_PROVIDER
+    print(f"[DEBUG] AI_PROVIDER 값: '{provider_display}' (실제 길이: {len(AI_PROVIDER)}, 소문자 변환 후: '{AI_PROVIDER}')")
+    print(f"[DEBUG] AI_PROVIDER가 'anthropic'과 같은가? {AI_PROVIDER == 'anthropic'}")
     
     # API 키 확인
     if AI_PROVIDER == "anthropic":
