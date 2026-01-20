@@ -42,13 +42,17 @@ jobs:
         run: |
           python aitest.py
       
-      - name: Commit and push state file
+      - name: Commit and push state file and logs
         if: always()
         run: |
           git add state.aitest.json
+          # 발송 로그 파일도 커밋 (있는 경우)
+          if [ -f debug_sent_entries.json ]; then
+            git add debug_sent_entries.json
+          fi
           if git diff --staged --quiet; then
-            echo "No changes to state file"
+            echo "No changes to commit"
           else
-            git commit -m "Update state file [skip ci]"
+            git commit -m "Update state file and logs [skip ci]"
             git push
           fi
