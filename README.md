@@ -8,19 +8,22 @@ AI 기반 보안 뉴스 필터링 및 Slack 발송 봇
 - AI(Claude/GPT)를 활용한 지능형 필터링
 - 관련 기사만 자동으로 Slack에 발송
 - 중복 기사 자동 제거
+- 프롬프트 변경 시 자동 재검토 기능
+- 실행 로그 자동 저장 및 관리
 
 ## Slack 알림 예시
 
 다음과 같은 형태로 Slack에 보안 뉴스 알림이 발송됩니다:
 
-![Slack 알림 예시](./img/image.png)
+![Slack 알림 예시](./images/slack-notification-example.png)
 
-**알림 구성 요소:**
-- 🔴 위험도 표시 (높음/중간/낮음)
-- 📊 AI 판단 점수 및 결정 (SCRAPE/SKIP/WATCHLIST)
-- 🎯 대상 시스템/기업 정보
-- 📅 기사 발행일
-- 📊 기사 요약 정보
+**알림 형식 (아이콘 최소화):**
+- 🔴 위험도 표시만 사용 (높음/중간/낮음)
+- 나머지는 텍스트 라벨로 표시 (가독성 향상)
+- 대상 시스템/기업 정보
+- AI 판단 점수 및 결정
+- 기사 발행일
+- 기사 요약 정보
 
 ## 설치
 
@@ -81,11 +84,13 @@ AI가 다음 **세 가지 경우에만** 기사를 발송합니다:
    - ISMS-P 인증 기준 변경/강화
    - ⚠️ 제외: 법령 개정이 아닌 단순 설명/행사/의견 기사, 해외 법령 개정
 
-3. **우리 회사에서 사용하는 서비스 취약점**
-   - **허용 제품**: Adobe Reader, FortiGate Firewall, Windows, Office 365
+3. **보안 담당자가 궁금해할 취약점**
+   - **우리가 사용하는 서비스/제품**: Adobe Reader, FortiGate Firewall, Windows, Office 365
+   - **널리 사용되는 서비스/제품**: 아파치(Apache) 관련 오픈소스, 널리 사용되는 오픈소스 라이브러리/프레임워크, 널리 사용되는 네트워크 장비
+   - **실무에서 자주 사용하는 SaaS 서비스**: LinkedIn, Google Gemini, Google Workspace, Slack, Zoom 등 (실제 취약점만)
    - Windows 프로토콜/서비스 취약점 포함 (NTLM, SMB, RDP 등)
    - ⚠️ Office 365만 허용 (Office 2016/2019/2021 등 설치형 제외)
-   - ⚠️ 허용 목록에 없는 모든 제품 제외
+   - ⚠️ 피싱/악성코드 유포 기사는 제외 (보안 인식/교육 범주)
 
 ### ❌ 제외 대상 (SKIP: 0-49점)
 
@@ -110,6 +115,16 @@ AI가 다음 **세 가지 경우에만** 기사를 발송합니다:
 - **수동 실행**: GitHub Actions 탭에서 `workflow_dispatch`로 수동 실행 가능
 - **상태 파일**: `state.aitest.json`이 자동으로 커밋되어 실행 상태 추적
 - **발송 로그**: `debug_sent_entries.json`에 발송된 기사 정보 저장
+- **실행 로그**: `logs/execution_YYYYMMDD_HHMMSS.log`에 실행 로그 저장 (타임스탬프 포함)
+
+## 프롬프트 변경 시 재검토 기능
+
+프롬프트 파일(`ai_prompt_simple.txt`)이 변경되면 자동으로 감지하여:
+- 이미 제외된 기사들을 새로운 기준으로 재검토
+- 재검토 결과만 확인 (재발송하지 않음)
+- 새로운 기준에서 제외가 맞는지 확인 가능
+
+**재발송 방법**: `state.aitest.json`에서 해당 기사 링크를 `seen_links`에서 제거하면 다음 실행 시 발송됩니다.
 
 ## 파일 구조
 
@@ -117,8 +132,10 @@ AI가 다음 **세 가지 경우에만** 기사를 발송합니다:
 - `ai_prompt_simple.txt`: AI 판단 기준 프롬프트
 - `state.aitest.json`: 처리된 기사 추적 상태 파일
 - `debug_sent_entries.json`: 발송된 기사 로그 (GitHub Actions 실행 시 자동 생성)
+- `logs/execution_*.log`: 실행 로그 파일 (타임스탬프 포함)
 - `.github/workflows/security-news-bot.yml`: GitHub Actions 워크플로우 정의
 - `requirements.txt`: Python 패키지 의존성
+
 
 ## 라이선스
 
