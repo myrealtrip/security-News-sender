@@ -760,7 +760,12 @@ def process_articles_ai_driven():
         if link:
             normalized_link = normalize_url(link)
             if normalized_link and normalized_link in seen_links:
-                print(f"⏭️ 중복 기사 링크 발견: {title[:50]}...")
+                # 프롬프트 변경 시: 이미 제외된 기사도 재검토 대상에 추가
+                if prompt_changed:
+                    review_entries.append((entry, normalized_link))
+                    print(f"🔄 재검토 대상: {title[:50]}... (이전에 제외됨)")
+                else:
+                    print(f"⏭️ 중복 기사 링크 발견: {title[:50]}...")
                 continue
         
         uid = entry_uid(entry)
