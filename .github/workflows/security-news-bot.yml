@@ -40,7 +40,13 @@ jobs:
           # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # OPENAI_MODEL: ${{ secrets.OPENAI_MODEL || 'gpt-4o-mini' }}
         run: |
-          python aitest.py
+          # 로그 디렉토리 생성
+          mkdir -p logs
+          # 실행 로그를 파일로 저장 (stdout과 stderr 모두, 타임스탬프 포함)
+          LOG_FILE="logs/execution_$(date +%Y%m%d_%H%M%S).log"
+          python aitest.py 2>&1 | tee "$LOG_FILE"
+          # 최신 실행 로그를 execution.log로도 저장 (최신 로그 확인용)
+          cp "$LOG_FILE" execution.log
       
       - name: Commit and push state file and logs
         if: always()
@@ -49,6 +55,14 @@ jobs:
           # 발송 로그 파일도 커밋 (있는 경우)
           if [ -f debug_sent_entries.json ]; then
             git add debug_sent_entries.json
+          fi
+          # 실행 로그 파일들도 커밋 (logs 디렉토리 전체)
+          if [ -d logs ] && [ -n "$(ls -A logs 2>/dev/null)" ]; then
+            git add logs/
+          fi
+          # 최신 실행 로그도 커밋 (있는 경우)
+          if [ -f execution.log ]; then
+            git add execution.log
           fi
           if git diff --staged --quiet; then
             echo "No changes to commit"
