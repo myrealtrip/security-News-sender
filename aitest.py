@@ -61,7 +61,9 @@ def load_state():
             "seen": [],
             "seen_titles": [],
             "seen_original_titles": [],
-            "seen_links": []
+            "seen_links": [],
+            "prompt_hash": None,
+            "last_prompt_change": None
         }
     state = json.load(open(STATE_FILE, "r", encoding="utf-8"))
     # 기존 state 파일에 필드가 없을 수 있으므로 초기화
@@ -71,7 +73,44 @@ def load_state():
         state["seen_original_titles"] = []
     if "seen_links" not in state:
         state["seen_links"] = []
+    if "prompt_hash" not in state:
+        state["prompt_hash"] = None
+    if "last_prompt_change" not in state:
+        state["last_prompt_change"] = None
     return state
+
+def get_prompt_hash():
+    """프롬프트 파일의 해시값 계산"""
+    try:
+        if os.path.exists(AI_PROMPT_FILE):
+            with open(AI_PROMPT_FILE, "r", encoding="utf-8") as f:
+                content = f.read()
+                return hashlib.md5(content.encode('utf-8')).hexdigest()
+    except Exception as e:
+        print(f"[WARN] 프롬프트 해시 계산 실패: {e}")
+    return None
+
+def check_prompt_changed(state):
+    """프롬프트가 변경되었는지 확인하고, 변경 시 알림"""
+    current_hash = get_prompt_hash()
+    if current_hash is None:
+        return False
+    
+    previous_hash = state.get("prompt_hash")
+    if previous_hash is None:
+        # 처음 실행하는 경우
+        state["prompt_hash"] = current_hash
+        return False
+    
+    if current_hash != previous_hash:
+        print(f"[INFO] ⚠️ 프롬프트가 변경되었습니다!")
+        print(f"[INFO] 이전 해시: {previous_hash[:8]}... → 새 해시: {current_hash[:8]}...")
+        print(f"[INFO] 새로운 기준으로 기사가 재검토됩니다.")
+        state["prompt_hash"] = current_hash
+        state["last_prompt_change"] = time.strftime("%Y-%m-%d %H:%M:%S")
+        return True
+    
+    return False
 
 def save_state(state):
     """상태 파일 저장"""
@@ -620,6 +659,17 @@ def process_articles_ai_driven():
     - AI 판단을 최대한 신뢰
     """
     state = load_state()
+    
+    # 프롬프트 변경 확인 (스크립트 실행 시마다 체크)
+    prompt_changed = check_prompt_changed(state)
+    if prompt_changed:
+        print("[INFO] 💡 이미 제외된 기사들도 새로운 기준으로 재검토합니다.")
+    
+    # 발송된 기사 추적 (재발송 방지용)
+    sent_links = set(state.get("sent_links", []))
+    if "sent_links" not in state:
+        state["sent_links"] = []
+    
     seen = set(state.get("seen", []))
     seen_titles = set(state.get("seen_titles", []))
     seen_original_titles = state.get("seen_original_titles", [])
@@ -636,6 +686,7 @@ def process_articles_ai_driven():
     
     # 1단계: 중복 체크 (코드 기반)
     candidate_entries = []
+    review_entries = []  # 재검토 대상 기사 (이미 seen_links에 있지만 프롬프트 변경으로 재검토)
     
     for entry in recent_entries:
         link = entry.get("link", "")
