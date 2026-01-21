@@ -664,35 +664,30 @@ def post_one_to_slack(e, ai_judgment=None):
         else:
             risk_bar_emoji = "🟢"
     
-    blocks = [
-        {
-            "type": "header",
-            "text": {"type": "plain_text", "text": "🔔 보안뉴스 알림"}
-        },
-    ]
+    blocks = []
     
-    # AI 판단 점수 추가
+    # AI 판단 점수 추가 (사용자에게는 점수만 표시, 기술 용어 제거)
     score_text = ""
     if ai_judgment and "score" in ai_judgment:
         score = ai_judgment.get("score", 0)
-        decision = ai_judgment.get("decision", "UNKNOWN")
-        score_text = f"\n📊 AI 판단: {decision} (점수: {score}/100)"
+        score_text = f"AI 판단 점수: {score}/100"
     
-    title_section_text = f"*<{link}|{title}>*\n📅 {published}{score_text}"
-    if risk_indicator:
-        title_section_text = f"{risk_indicator}\n{title_section_text}"
-    
+    # 제목 섹션 (위험도 이모지 + 제목 + 날짜 + 점수)
+    title_parts = []
     if risk_bar_emoji:
-        title_with_bar = f"{risk_bar_emoji} {title_section_text}"
-        blocks.append({
-            "type": "section",
-            "text": {"type": "mrkdwn", "text": title_with_bar}
-        })
-    else:
-        blocks.append({
-            "type": "section",
-            "text": {"type": "mrkdwn", "text": title_section_text}
-        })
+        title_parts.append(risk_bar_emoji)
+    title_parts.append(f"*<{link}|{title}>*")
+    if published:
+        title_parts.append(f"날짜: {published}")
+    if score_text:
+        title_parts.append(score_text)
+    
+    title_section_text = "\n".join(title_parts)
+    
+    blocks.append({
+        "type": "section",
+        "text": {"type": "mrkdwn", "text": title_section_text}
+    })
     
     # AI 판단 결과가 있으면 기사 요약 추가
     if ai_judgment:
