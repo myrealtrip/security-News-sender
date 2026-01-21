@@ -60,21 +60,38 @@
   - 포함: "개정", "개정안", "시행령", "시행규칙", "법률 개정", "법 개정", "강화", "과징금", "처벌 강화", "의무", "가이드라인", "지침", "개보위", "개인정보보호위원회"
   - 제외: "설명회", "세미나", "행사", "회의", "의견", "제안" (단, 법령 개정과 함께 언급되는 경우는 포함)
 
-**3. 우리 회사에서 사용하는 서비스 취약점**
+**3. 보안 담당자가 궁금해할 취약점**
 → SCRAPE (80-100점)
-→ 대상: 우리가 사용하는 서비스/제품의 보안 취약점(CVE)
-→ ⚠️ **허용 제품 목록** (이 목록에 있는 제품만 허용):
-  - Adobe Reader (또는 Adobe Acrobat Reader)
-  - FortiGate Firewall (또는 FortiGate, FortiOS)
-  - Windows (또는 Microsoft Windows, Windows 10, Windows 11) - ⚠️ **중요**: Windows 프로토콜/서비스 취약점도 포함 (예: NTLM, SMB, RDP 등)
-  - Office 365 (또는 Microsoft Office 365) - ⚠️ **중요**: Office 2016, Office 2019, Office 2021 등 설치형은 제외, Office 365만 허용
+→ 대상: 실제 취약점(CVE) 기사 중 보안 담당자가 인지하고 대응해야 할 취약점
+→ ⚠️ **포함 조건**:
+  - **실제 취약점(CVE) 기사**: CVE 번호가 있거나 실제 취약점이 명시된 기사
+  - **우리가 사용하는 서비스/제품의 취약점**: 
+    - Adobe Reader (또는 Adobe Acrobat Reader)
+    - FortiGate Firewall (또는 FortiGate, FortiOS)
+    - Windows (또는 Microsoft Windows, Windows 10, Windows 11) - ⚠️ **중요**: Windows 프로토콜/서비스 취약점도 포함 (예: NTLM, SMB, RDP, Kerberos 등)
+    - Office 365 (또는 Microsoft Office 365) - ⚠️ **중요**: Office 2016, Office 2019, Office 2021 등 설치형은 제외, Office 365만 허용
+  - **널리 사용되는 서비스/제품의 취약점**: 
+    - 아파치(Apache) 관련 오픈소스 (Apache HTTP Server, Apache Tomcat, Apache Kafka 등)
+    - 널리 사용되는 오픈소스 라이브러리/프레임워크 (Spring, Django, React 등)
+    - 널리 사용되는 네트워크 장비 (Cisco, TP-Link 등)
+  - **실무에서 자주 사용하는 SaaS 서비스의 취약점**:
+    - LinkedIn (실제 취약점만, 피싱/악성코드 유포 기사는 제외)
+    - Google Gemini (실제 취약점만)
+    - Google Workspace (실제 취약점만)
+    - Slack, Zoom 등 널리 사용되는 협업 도구 (실제 취약점만)
+  - **해외 뉴스여도 우리가 사용하는 서비스/제품이면 포함**
+→ ⚠️ **제외 조건** (다음 중 하나라도 해당하면 SKIP):
+  - 피싱/악성코드 유포 기사 (보안 인식/교육 범주) - ⚠️ **중요**: "피싱", "악성코드 유포", "사기" 등이 주요 내용이면 SKIP
+  - 분석/리뷰 기사 (실제 취약점이 아닌 공격 사례 분석, 공격 동향, 공격 패턴 등)
+  - 일반 뉴스/홍보 (행사, 회의, 수상, 어워즈, 가이드 발표 등)
+  - 해외 뉴스 (단, 우리가 사용하는 서비스/제품은 예외)
 → ⚠️ **판단 원칙**:
-  - 위 허용 목록에 명시된 4개 제품만 허용
+  - **실제 취약점(CVE) 기사만 포함**: CVE 번호가 있거나 실제 취약점이 명시된 기사만 포함
+  - **피싱/악성코드 유포 기사는 제외**: "피싱", "악성코드 유포", "사기" 등이 주요 내용이면 보안 인식/교육 범주로 판단하여 SKIP
   - **Windows 관련**: Windows 자체 취약점뿐만 아니라 Windows 프로토콜/서비스 취약점도 포함 (NTLM, SMB, RDP, Kerberos 등)
-  - **이 목록에 없는 모든 제품은 제외** (예: FortiSIEM, ColdFusion, Ruckus, ServiceNow, VMware, Airoha, HPE, Trend Micro, MongoDB, n8n, Telegram, Facebook, Instagram 등)
-  - "Adobe"만 있고 "Reader"가 없으면 SKIP (ColdFusion, Photoshop 등일 가능성)
-  - "Fortinet"만 있고 "FortiGate"가 없으면 SKIP (FortiSIEM 등일 가능성)
-  - "제품 보안 업데이트 권고" 같은 제목이어도 허용 목록에 없으면 SKIP
+  - **Office 판단**: Office 365만 허용, Office 2016/2019/2021 등 설치형은 제외
+  - **Adobe 판단**: "Adobe"만 있고 "Reader"가 없으면 SKIP (ColdFusion, Photoshop 등일 가능성)
+  - **Fortinet 판단**: "Fortinet"만 있고 "FortiGate"가 없으면 SKIP (FortiSIEM 등일 가능성)
 
 ────────────────
 [판단 체크리스트]
@@ -94,9 +111,13 @@
    - ❌ 법령 개정이 아닌 단순 설명/해설/행사/회의/의견/제안 기사 → SKIP
    - ❌ 해외 법령 개정 → SKIP
 
-3. **우리 시스템 취약점인가?**
-   - ✅ 허용 목록(Adobe Reader, FortiGate, Windows, Office 365)에 있는 제품 → SCRAPE
-   - ❌ 허용 목록에 없는 모든 제품 → SKIP
+3. **보안 담당자가 궁금해할 취약점인가?**
+   - ✅ 실제 취약점(CVE) 기사이고, 우리가 사용하는 서비스/제품 → SCRAPE
+   - ✅ 실제 취약점(CVE) 기사이고, 널리 사용되는 서비스/제품 (아파치, 널리 사용되는 오픈소스 등) → SCRAPE
+   - ✅ 실제 취약점(CVE) 기사이고, 실무에서 자주 사용하는 SaaS 서비스 (LinkedIn, Gemini, Google Workspace 등) → SCRAPE
+   - ❌ 피싱/악성코드 유포 기사 (보안 인식/교육 범주) → SKIP
+   - ❌ 분석/리뷰 기사 (실제 취약점이 아닌 공격 사례 분석) → SKIP
+   - ❌ 일반 뉴스/홍보 → SKIP
    - ⚠️ **Office 판단**: Office 365만 허용, Office 2016/2019/2021 등 설치형은 제외
 
 4. **일반 뉴스/홍보/분석인가?**
@@ -255,13 +276,58 @@
   "decision": "SKIP",
   "score": 20,
   "why": [
-    "기사에 명시된 제품이 우리 시스템 허용 목록에 없음",
-    "우리 시스템(Adobe Reader, FortiGate, Windows, Office 365)과 무관"
+    "기사에 명시된 제품이 우리가 사용하지 않는 제품",
+    "널리 사용되는 서비스/제품도 아니고, 실무에서 자주 사용하는 SaaS 서비스도 아님"
   ],
-  "summary_3lines": "🟢 낮음 | 취약점\n우리 시스템과 무관한 취약점으로 제외",
+  "summary_3lines": "🟢 낮음 | 취약점\n보안 담당자가 궁금해할 필요가 없는 취약점으로 제외",
   "tags": ["Vulnerability"],
   "CVE_IDs": ["CVE-2025-XXXX"],
   "products_affected": ["제품명"]
+}
+
+[JSON 예시 4-2: 널리 사용되는 오픈소스 취약점 (score 85)]
+{
+  "decision": "SCRAPE",
+  "score": 85,
+  "why": [
+    "아파치 bRPC는 널리 사용되는 오픈소스로 보안 담당자가 인지해야 할 취약점",
+    "기사에 명시된 원격 명령 실행 취약점으로 심각성 확인",
+    "실제 취약점(CVE) 기사로 대응 가능"
+  ],
+  "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n🎯 대상: 아파치 bRPC\n📊 설명: 인증 없이 원격 명령 실행 취약점 발견",
+  "tags": ["Vulnerability", "CVE", "Open Source"],
+  "CVE_IDs": ["CVE-2025-XXXX"],
+  "products_affected": ["Apache bRPC"]
+}
+
+[JSON 예시 4-3: 실무에서 사용하는 SaaS 서비스 취약점 (score 85)]
+{
+  "decision": "SCRAPE",
+  "score": 85,
+  "why": [
+    "제미나이(Gemini)는 실무에서 자주 사용하는 AI 서비스로 보안 담당자가 인지해야 할 취약점",
+    "기사에 명시된 캘린더 취약점으로 실무에 직접 영향",
+    "실제 취약점 기사로 사용자 차원 대응 가능"
+  ],
+  "summary_3lines": "🔴 높음 | 취약점\n🎯 대상: Google Gemini (캘린더)\n📊 설명: 캘린더 초대장을 통한 취약점 발견",
+  "tags": ["Vulnerability", "SaaS", "AI Service"],
+  "CVE_IDs": [],
+  "products_affected": ["Google Gemini"]
+}
+
+[JSON 예시 4-4: 피싱/악성코드 유포 기사 (score 20)]
+{
+  "decision": "SKIP",
+  "score": 20,
+  "why": [
+    "실제 취약점(CVE) 기사가 아닌 피싱/악성코드 유포 기사",
+    "보안 인식/교육 범주로 보안 담당자가 궁금해할 취약점이 아님",
+    "기사에 '피싱', '악성코드 유포', '사기' 등이 주요 내용"
+  ],
+  "summary_3lines": "🟢 낮음 | 보안 인식/교육\n피싱/악성코드 유포 기사로 제외",
+  "tags": [],
+  "CVE_IDs": [],
+  "products_affected": []
 }
 
 [JSON 예시 5: 직업군 단위 유출 (score 20)]
