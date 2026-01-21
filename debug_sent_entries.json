@@ -1,123 +1,28 @@
 {
-  "timestamp": "2026-01-21 08:48:37",
+  "timestamp": "2026-01-21 09:15:33",
   "total_articles": 20,
-  "sent_count": 5,
+  "sent_count": 1,
   "sent_articles": [
     {
-      "title": "아파치 bRPC ‘비상’... 인증 없이 원격 명령 실행하는 취약점 발견",
-      "link": "http://www.boannews.com/media/view.asp?idx=141595&kind=1&sub_kind=",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 85,
-        "why": [
-          "아파치 bRPC는 널리 사용되는 오픈소스로 보안 담당자가 인지해야 할 취약점",
-          "기사에 명시된 CVE-2025-60021 취약점으로 심각성 확인",
-          "인증 없이 원격 시스템 명령 실행 가능한 고위험 취약점",
-          "1.15.0 미만 모든 버전에 영향을 미치는 광범위한 취약점"
-        ],
-        "products_affected": [
-          "Apache bRPC"
-        ],
-        "tags": [
-          "Vulnerability",
-          "CVE",
-          "Remote Code Execution",
-          "Open Source"
-        ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n🎯 대상: 아파치 bRPC\n📊 설명: 인증 없이 원격 시스템 명령 실행 취약점, CVE-2025-60021"
-      }
-    },
-    {
-      "title": "TP-Link 제품 보안 업데이트 권고",
-      "link": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71945",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 85,
-        "why": [
-          "널리 사용되는 네트워크 장비 제조사인 TP-Link 제품의 보안 취약점",
-          "보안 업데이트 권고는 보안 담당자가 인지해야 할 중요한 정보",
-          "네트워크 장비 취약점으로 우리 시스템에 잠재적 위험 존재"
-        ],
-        "products_affected": [
-          "TP-Link"
-        ],
-        "tags": [
-          "Vulnerability",
-          "Network Equipment",
-          "Security Update"
-        ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n🎯 대상: TP-Link 네트워크 장비\n📊 내용: 보안 취약점으로 인한 업데이트 권고"
-      }
-    },
-    {
-      "title": "\"캘린더 초대장 하나가 ‘제미나이’를 속였다\"...제미나이 캘린더 취약점의 경고",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204520",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 85,
-        "why": [
-          "제미나이(Gemini)는 실무에서 자주 사용하는 AI 서비스로 보안 담당자가 인지해야 할 취약점",
-          "구글 캘린더를 통한 간접 프롬프트 인젝션 공격 취약점으로 실무에 직접 영향",
-          "사용자 인증 및 안전장치를 우회하는 심각한 취약점 발견"
-        ],
-        "products_affected": [
-          "Google Gemini",
-          "Google Calendar"
-        ],
-        "tags": [
-          "Vulnerability",
-          "SaaS",
-          "AI Service",
-          "Prompt Injection"
-        ],
-        "summary_3lines": "🔴 높음 | 취약점\n🎯 대상: Google Gemini (캘린더)\n📊 설명: 캘린더 초대장 통한 간접 프롬프트 인젝션 공격 취약점 발견"
-      }
-    },
-    {
-      "title": "맨디언트, ‘Net-NTLMv1’ 퇴출 앞당기려 레인보우 테이블 공개",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204474",
+      "title": "송경희 개인정보위원장 “쿠팡 유출 3000만명 맞고, SKT 소송 적극 대응할 것”",
+      "link": "http://www.boannews.com/media/view.asp?idx=141610&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 90,
         "why": [
-          "Windows 프로토콜 취약점(Net-NTLMv1)으로 우리 시스템에 직접 영향",
-          "공격자가 소비자용 하드웨어로 12시간 내 키 복구 가능한 심각한 취약점",
-          "레거시 인증 프로토콜의 보안 위험성을 직접적으로 보여주는 기사"
+          "국내 IT 기업(쿠팡)의 대규모 개인정보 유출 사고",
+          "3000만명 이상의 대규모 개인정보 유출로 심각성 확인",
+          "개인정보보호위원회 위원장의 공식 확인으로 사실성 높음"
         ],
         "products_affected": [
-          "Windows",
-          "Net-NTLMv1"
-        ],
-        "tags": [
-          "Vulnerability",
-          "Windows Protocol",
-          "Authentication"
-        ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n🎯 대상: Windows 네트워크 인증 프로토콜\n📊 설명: Net-NTLMv1 취약점으로 12시간 내 키 복구 가능"
-      }
-    },
-    {
-      "title": "SKT, 개인정보 유출 과징금 1347억원 취소 소송 제기",
-      "link": "http://www.boannews.com/media/view.asp?idx=141569&kind=1&sub_kind=",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 90,
-        "why": [
-          "국내 기업(SK텔레콤)의 개인정보 유출 사건으로 보안 담당자가 인지해야 할 사안",
-          "약 2324만 명 가입자의 대규모 개인정보 유출로 심각성 확인",
-          "개인정보보호위원회로부터 역대 최대 규모인 1347억원 과징금 부과",
-          "내부자에 의한 개인정보 유출 사건으로 개인정보보호법 위반 확인"
-        ],
-        "products_affected": [
-          "SK텔레콤"
+          "쿠팡 서비스"
         ],
         "tags": [
           "개인정보 유출",
-          "과징금",
-          "개인정보보호법",
-          "ISMS-P"
+          "쿠팡",
+          "대규모 유출"
         ],
-        "summary_3lines": "🔴 높음 | 개인정보 유출\n🎯 대상: SK텔레콤\n📊 내용: 2324만 명 개인정보 유출, 1347억원 과징금 부과 및 취소 소송"
+        "summary_3lines": "🔴 높음 | 대규모 개인정보 유출\n🎯 대상: 쿠팡\n📊 유출규모: 3000만명 이상 개인정보"
       }
     }
   ]
