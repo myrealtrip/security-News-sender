@@ -773,10 +773,18 @@ def process_articles_ai_driven():
     
     print(f"[INFO] 배치 내 중복 제거 후 {len(final_entries)}건의 기사")
     
+    # 프롬프트 변경 시: 이미 제외된 기사도 재검토
+    if prompt_changed and review_entries:
+        print(f"\n[INFO] 🔄 재검토 모드: {len(review_entries)}건의 기사를 새로운 기준으로 재검토합니다.")
+        for entry, normalized_link in review_entries:
+            # 재검토 기사도 final_entries에 추가
+            final_entries.append(entry)
+    
     # 3단계: AI 판단 (AI 주도)
     new_entries = []
     ai_call_count = 0
     sent_count = 0
+    review_count = 0  # 재검토 기사 수
     sent_entries = []  # 발송된 기사 목록 (중복 체크용) - (entry, ai_judgment) 튜플 저장
     
     for entry in final_entries:
@@ -879,10 +887,44 @@ def process_articles_ai_driven():
                 if is_duplicate_sent:
                     break
             
+            # 재검토 모드: 이미 seen_links에 있는 기사는 재발송 여부 확인
+            link = entry.get("link", "")
+            is_review_mode = False
+            if prompt_changed and link:
+                normalized_link = normalize_url(link)
+                if normalized_link and normalized_link in seen_links:
+                    is_review_mode = True
+            
             if not is_duplicate_sent:
-                print(f"✅ 발송 결정: {title[:50]}...")
-                post_one_to_slack(entry, ai_judgment)
-                sent_count += 1
+                if is_review_mode:
+                    # 재검토 모드: SCRAPE인 경우 재발송, SKIP인 경우는 제외 확인만
+                    if ai_judgment.get('decision') == 'SCRAPE':
+                        print(f"🔄 재검토 결과: {title[:50]}...")
+                        print(f"   - AI 판단: SCRAPE (점수: {ai_judgment.get('score', 0)}/100)")
+                        print(f"   - ✅ 새로운 기준에서 발송 대상이므로 재발송합니다.")
+                        post_one_to_slack(entry, ai_judgment)
+                        sent_count += 1
+                        review_count += 1
+                        # 재발송된 기사는 sent_links에 추가
+                        if link:
+                            normalized_link = normalize_url(link)
+                            if normalized_link:
+                                sent_links.add(normalized_link)
+                    else:
+                        # SKIP인 경우는 판단 결과만 출력
+                        print(f"🔄 재검토 결과: {title[:50]}...")
+                        print(f"   - AI 판단: {ai_judgment.get('decision', 'UNKNOWN')} (점수: {ai_judgment.get('score', 0)}/100)")
+                        print(f"   - ✅ 새로운 기준에서도 제외 대상이 맞습니다.")
+                        review_count += 1
+                else:
+                    print(f"✅ 발송 결정: {title[:50]}...")
+                    post_one_to_slack(entry, ai_judgment)
+                    sent_count += 1
+                    # 발송된 기사 링크 저장
+                    if link:
+                        normalized_link = normalize_url(link)
+                        if normalized_link:
+                            sent_links.add(normalized_link)
                 sent_entries.append((entry, ai_judgment))  # 발송된 기사와 AI 판단 결과 함께 저장
             else:
                 print(f"⏭️ 중복 기사로 인해 발송 건너뜀: {title[:50]}...")
@@ -912,6 +954,7 @@ def process_articles_ai_driven():
     state["seen_titles"] = list(seen_titles)
     state["seen_original_titles"] = seen_original_titles[-1000:]  # 최근 1000개만 유지
     state["seen_links"] = list(seen_links)
+    state["sent_links"] = list(sent_links)  # 발송된 기사 링크 저장
     save_state(state)
     
     print(f"\n[결과 요약]")
@@ -919,6 +962,8 @@ def process_articles_ai_driven():
     print(f"  - 중복 제거 후: {len(final_entries)}건")
     print(f"  - AI 호출: {ai_call_count}건")
     print(f"  - 발송: {sent_count}건")
+    if prompt_changed and review_count > 0:
+        print(f"  - 재검토: {review_count}건 (새 기준으로 판단, SCRAPE인 경우 재발송)")
     
     # 디버깅 로그: 발송된 기사 정보를 별도 파일로 저장
     if sent_entries:
