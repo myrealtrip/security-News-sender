@@ -1,28 +1,27 @@
 {
-  "timestamp": "2026-01-21 20:45:58",
+  "timestamp": "2026-01-23 04:48:38",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "“3천 건 vs 3천만 명” 쿠팡 개인정보 유출, 판단 기준 놓고 정면 충돌",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204547",
+      "title": "패치도 소용없었다! 스마터메일, 패치 배포 이틀 만에 뚫려… 인증 우회해 관리자 권한 박탈",
+      "link": "http://www.boannews.com/media/view.asp?idx=141642&kind=1&sub_kind=",
       "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 90,
+        "decision": "WATCHLIST",
+        "score": 65,
         "why": [
-          "국내 최대 이커머스 쿠팡의 대규모 개인정보 유출 사건",
-          "개인정보보호위원회가 공식 입장 발표",
-          "3,000건 vs 3,000만 명 규모의 개인정보 유출 논란 확인"
+          "스마터메일 이메일 솔루션의 취약점 발견",
+          "인증 우회 가능한 보안 결함 확인",
+          "보안 패치 이틀 만에 취약점 발견"
         ],
         "products_affected": [
-          "쿠팡"
+          "SmarterMail"
         ],
         "tags": [
-          "개인정보 유출",
-          "이커머스",
-          "플랫폼 보안"
+          "Vulnerability",
+          "Authentication Bypass"
         ],
-        "summary_3lines": "🔴 높음 | 개인정보 유출\n대상: 쿠팡\n내용: 최대 3,000만 명 개인정보 유출 가능성, 개인정보보호위원회 공식 반박"
+        "summary_3lines": "🟡 중간 | 취약점(주의 필요)\n대상: 스마터메일(SmarterMail) 이메일 솔루션\n내용: 인증 우회 취약점, 관리자 권한 획득 가능성"
       }
     }
   ]
