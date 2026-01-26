@@ -1,145 +1,74 @@
 {
-  "timestamp": "2026-01-26 18:36:46",
+  "timestamp": "2026-01-26 12:19:02",
   "total_articles": 20,
-  "sent_count": 6,
+  "sent_count": 3,
   "sent_articles": [
     {
-      "title": "“패스키 도와준다”는 전화…옥타 SSO 탈취 후 SaaS 데이터 유출로 이어져",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204662",
+      "title": "\"캘린더 초대장 하나가 ‘제미나이’를 속였다\"...제미나이 캘린더 취약점의 경고",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204520",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 90,
+        "score": 85,
         "why": [
-          "옥타(Okta) SSO 계정 탈취를 통한 실제 SaaS 데이터 유출 사건",
-          "중간자형 피싱(AiTM) 공격 방식으로 높은 위험성 확인",
-          "기업 환경의 SSO 보안에 직접적인 영향을 미치는 사건"
+          "실무에서 자주 사용하는 SaaS 서비스(Google Gemini) 취약점",
+          "캘린더 초대장을 통한 간접 프롬프트 인젝션 공격 시나리오 발견",
+          "AI 보안 관점에서 중요한 취약점으로 판단"
         ],
         "products_affected": [
-          "Okta SSO",
-          "Microsoft",
-          "Google"
-        ],
-        "tags": [
-          "SSO 보안",
-          "피싱 공격",
-          "중간자 공격",
-          "사회공학"
-        ],
-        "summary_3lines": "🔴 높음 | 옥타 SSO 계정 탈취\n대상: 옥타(Okta) SSO 서비스\n설명: 음성 통화 기반 사회공학 공격으로 SSO 계정 탈취 후 SaaS 데이터 유출"
-      }
-    },
-    {
-      "title": "퇴사자의 복수? 워드프레스 2만개 사이트 비상... 전 직원이 ‘관리자 권한’ 백도어 심어",
-      "link": "http://www.boannews.com/media/view.asp?idx=141664&kind=1&sub_kind=",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 90,
-        "why": [
-          "워드프레스 플러그인의 심각한 백도어 취약점 발견",
-          "CVE-2026-0920 취약점으로 CVSS 9.8점의 고위험 결함",
-          "2만개 이상의 활성 사이트에 잠재적 위험 존재"
-        ],
-        "products_affected": [
-          "Element Kit for Elementor"
+          "Google Gemini",
+          "Google Calendar"
         ],
         "tags": [
           "Vulnerability",
-          "Backdoor",
+          "SaaS",
+          "AI Service",
+          "Prompt Injection"
+        ],
+        "summary_3lines": "🔴 높음 | 취약점\n대상: Google Gemini (캘린더)\n설명: 캘린더 초대장을 통한 간접 프롬프트 인젝션으로 비공개 회의 정보 유출 가능성"
+      }
+    },
+    {
+      "title": "맨디언트, ‘Net-NTLMv1’ 퇴출 앞당기려 레인보우 테이블 공개",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204474",
+      "ai_judgment": {
+        "decision": "SCRAPE",
+        "score": 90,
+        "why": [
+          "Windows 프로토콜(Net-NTLMv1) 취약점으로 우리 시스템에 직접 영향",
+          "자격증명 탈취 및 내부 확산 가능성 높은 취약점",
+          "보안 담당자가 즉시 대응해야 할 중요한 보안 권고사항 포함"
+        ],
+        "products_affected": [
+          "Windows Net-NTLMv1"
+        ],
+        "tags": [
+          "Vulnerability",
+          "Windows",
+          "Authentication Protocol"
+        ],
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: Windows Net-NTLMv1 프로토콜\n내용: 600달러 미만 장비로 12시간 내 키 복구 가능, 즉시 비활성화 권고"
+      }
+    },
+    {
+      "title": "워드프레스 플러그인 ‘Modular DS’ 치명적 취약점 악용…관리자 권한 탈취 공격 확산",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204404",
+      "ai_judgment": {
+        "decision": "SCRAPE",
+        "score": 90,
+        "why": [
+          "WordPress 플러그인의 실제 취약점으로 보안 담당자가 인지해야 할 중요 정보",
+          "CVE-2026-23550 번호가 명시된 실제 취약점 기사",
+          "관리자 권한 탈취 가능성으로 심각성 확인"
+        ],
+        "products_affected": [
+          "Modular DS WordPress Plugin"
+        ],
+        "tags": [
+          "Vulnerability",
+          "CVE",
           "WordPress"
         ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: 워드프레스 Element Kit for Elementor 플러그인 1.5.6.3 이하\n설명: 퇴사 직원이 숨긴 백도어로 관리자 권한 원격 생성 취약점"
-      }
-    },
-    {
-      "title": "GNU Inetutils 취약점 보안 업데이트 권고",
-      "link": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71948",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 85,
-        "why": [
-          "널리 사용되는 GNU Inetutils의 telnetd 취약점으로 보안 담당자가 인지해야 할 정보",
-          "CVE-2026-24061로 공식 식별된 인증우회 취약점",
-          "실제 취약점(CVE) 기사로 대응 가능한 보안 업데이트 권고 사항"
-        ],
-        "products_affected": [
-          "GNU Inetutils"
-        ],
-        "tags": [
-          "Vulnerability",
-          "CVE",
-          "Open Source"
-        ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: GNU Inetutils telnetd 1.9.3~2.7\n설명: 인증우회 취약점(CVE-2026-24061) 발견, 최신 소스코드 패치 적용 필요"
-      }
-    },
-    {
-      "title": "북한 ‘퍼플브라보’, 가짜 채용 면접으로 3,136개 IP·20개 조직 표적 공격",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204615",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 90,
-        "why": [
-          "북한 해커 그룹의 실제 사이버 공격 사례로 보안 담당자가 주목해야 할 정보",
-          "링크드인과 깃허브를 통한 대규모 표적 공격 확인",
-          "VS 코드와 개발 도구를 악용한 공격 방식 상세 분석"
-        ],
-        "products_affected": [
-          "LinkedIn",
-          "GitHub",
-          "Visual Studio Code",
-          "Node.js"
-        ],
-        "tags": [
-          "Hacking",
-          "North Korea",
-          "Supply Chain Attack"
-        ],
-        "summary_3lines": "🔴 높음 | 북한 해커 표적 공격\n대상: AI, 금융, IT 서비스 등 20개 조직\n내용: 채용 사기로 3,136개 IP 대상 악성코드 유포"
-      }
-    },
-    {
-      "title": "영상 픽셀 속 악성코드 숨기는 ‘픽셀코드’ 공격 주의보... 탐지 어려워",
-      "link": "http://www.boannews.com/media/view.asp?idx=141644&kind=1&sub_kind=",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 85,
-        "why": [
-          "새로운 악성코드 유포 기법인 픽셀코드(PixelCode) 공격 방식 분석",
-          "엔드포인트 탐지 및 대응(EDR) 솔루션을 우회하는 공격 기법 설명",
-          "실제 공격 사례와 기술적 상세 메커니즘 포함"
-        ],
-        "products_affected": [
-          "YouTube",
-          "Multimedia Platforms"
-        ],
-        "tags": [
-          "Malware",
-          "Attack Technique",
-          "Stealth Payload"
-        ],
-        "summary_3lines": "🔴 높음 | 새로운 악성코드 유포 기법\n대상: 유튜브 등 멀티미디어 플랫폼\n설명: 영상 픽셀 속에 악성코드 숨기는 '픽셀코드' 공격 기법 발견"
-      }
-    },
-    {
-      "title": "패치도 소용없었다! 스마터메일, 패치 배포 이틀 만에 뚫려… 인증 우회해 관리자 권한 박탈",
-      "link": "http://www.boannews.com/media/view.asp?idx=141642&kind=1&sub_kind=",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 90,
-        "why": [
-          "실제 취약점(CVE)이 발견된 SmarterMail 제품 취약점",
-          "API 엔드포인트를 통한 인증 우회 및 관리자 권한 탈취 가능성 확인",
-          "CVE-2026-23760 번호가 할당된 심각한 취약점"
-        ],
-        "products_affected": [
-          "SmarterMail"
-        ],
-        "tags": [
-          "Vulnerability",
-          "CVE",
-          "Authentication Bypass"
-        ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: SmarterMail\n설명: API 엔드포인트 취약점으로 인증 우회 및 관리자 권한 탈취 가능"
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: WordPress 플러그인 'Modular DS' 2.5.1 이하\n설명: 인증 우회를 통한 관리자 권한 탈취 취약점, 원격 공격 가능"
       }
     }
   ]
