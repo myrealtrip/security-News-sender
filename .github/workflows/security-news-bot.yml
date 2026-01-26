@@ -31,7 +31,8 @@ jobs:
       - name: Run security news bot
         env:
           # GitHub Secrets를 환경변수로 매핑 (자동 인식 안 됨, 명시적으로 설정 필요!)
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
           USE_AI_JUDGMENT: ${{ secrets.USE_AI_JUDGMENT || 'true' }}
           AI_PROVIDER: ${{ secrets.AI_PROVIDER || 'anthropic' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -39,6 +40,9 @@ jobs:
           # OpenAI 사용 시 (주석 해제):
           # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # OPENAI_MODEL: ${{ secrets.OPENAI_MODEL || 'gpt-4o-mini' }}
+          # 프롬프트 파일 경로 (선택사항, 기본값 사용 시 생략 가능)
+          # AI_PROMPT_FILE_FIRST_STAGE: ${{ secrets.AI_PROMPT_FILE_FIRST_STAGE || 'ai_prompt_first_stage.txt' }}
+          # AI_PROMPT_FILE_SECOND_STAGE: ${{ secrets.AI_PROMPT_FILE_SECOND_STAGE || 'ai_prompt_second_stage.txt' }}
         run: |
           # 로그 디렉토리 생성
           mkdir -p logs
