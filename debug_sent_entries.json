@@ -1,29 +1,28 @@
 {
-  "timestamp": "2026-01-27 09:15:53",
+  "timestamp": "2026-01-27 13:50:01",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "감사원, 공공 ‘집중관리시스템’ 7개 모의해킹…전 시스템에서 취약점 확인",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204708",
+      "title": "메시지 열지 않아도 감염…왓츠앱 그룹채팅 보안 취약점 경고",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204710",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 90,
+        "score": 85,
         "why": [
-          "공공부문 개인정보 시스템에 대한 대규모 모의해킹 결과 발표",
-          "123개 집중관리시스템 중 7개 시스템 전체에서 심각한 취약점 확인",
-          "외부 해킹에 대한 보안 대책의 구조적 허점 지적"
+          "실제 취약점으로 보안 담당자가 궁금해할 만한 내용",
+          "널리 사용되는 메신저(왓츠앱) 그룹채팅 취약점 발견",
+          "제로 클릭 공격 가능성으로 보안 위험성 높음"
         ],
         "products_affected": [
-          "공공부문 집중관리시스템"
+          "WhatsApp"
         ],
         "tags": [
-          "공공시스템 취약점",
-          "모의해킹",
-          "개인정보 보호",
-          "보안 점검"
+          "Vulnerability",
+          "Messenger",
+          "Zero-Click Attack"
         ],
-        "summary_3lines": "🔴 높음 | 공공시스템 취약점 발견\n대상: 공공부문 집중관리시스템 7개\n내용: 모든 시스템에서 권한 없는 정보 조회 취약점 확인"
+        "summary_3lines": "🔴 높음 | 취약점(보안설정 권고)\n대상: WhatsApp (안드로이드)\n설명: 그룹채팅 통한 제로 클릭 공격 가능, 미디어 자동 다운로드 악용"
       }
     }
   ]
