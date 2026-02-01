@@ -1444,6 +1444,13 @@ def process_articles_ai_driven():
                 is_duplicate_sent = False
                 title_lower = title.lower()
                 
+                # 1. 이전 실행에서 이미 발송된 링크인지 확인 (가장 빠른 체크)
+                if link:
+                    normalized_link = normalize_url(link)
+                    if normalized_link and normalized_link in sent_links:
+                        print(f"⏭️ 이전 실행에서 이미 발송된 기사 링크 발견: {title[:50]}...")
+                        continue
+                
                 for sent_entry_data in sent_entries:
                     sent_entry, sent_ai_judgment = sent_entry_data
                     sent_title = sent_entry.get("title", "")
