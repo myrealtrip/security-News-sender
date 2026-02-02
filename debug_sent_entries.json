@@ -1,28 +1,30 @@
 {
-  "timestamp": "2026-02-02 07:28:59",
+  "timestamp": "2026-02-02 08:49:43",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "NET-NTLM v1 보안 업데이트 권고",
-      "link": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71957",
+      "title": "[쿠팡 해킹] “쿠팡 셀프 조사, 형사 책임 물을 수도”",
+      "link": "http://www.boannews.com/media/view.asp?idx=141817&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 90,
+        "score": 85,
         "why": [
-          "Windows 프로토콜 취약점으로 우리 시스템에 직접 영향",
-          "NET-NTLM v1 프로토콜의 심각한 보안 취약점 확인",
-          "암호 알고리즘과 해시의 취약성으로 인한 보안 위험 존재"
+          "쿠팡의 개인정보 3370만 명 유출 사고 관련 중요 내용",
+          "셀프 조사에 대한 법적 리스크 및 형사 책임 가능성 언급",
+          "국회입법조사처의 공식 보고서 내용 포함",
+          "경찰의 해롤드 로저스 임시대표 피의자 조사 확인"
         ],
         "products_affected": [
-          "Windows"
+          "쿠팡 서비스"
         ],
         "tags": [
-          "Vulnerability",
-          "Windows",
-          "Authentication Protocol"
+          "데이터 유출",
+          "기업 책임",
+          "개인정보보호법",
+          "형사 책임"
         ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: Windows NET-NTLM v1 프로토콜\n설명: 취약한 암호 알고리즘 및 해시 사용, 서버 인증 절차 부재로 보안 위험 확인"
+        "summary_3lines": "🔴 높음 | 해킹, 개인정보 유출\n대상: 쿠팡\n내용: 3370만 명 개인정보 유출, 셀프 조사로 형사 책임 위험 발생"
       }
     }
   ]
