@@ -1,28 +1,33 @@
 {
-  "timestamp": "2026-02-01 11:09:52",
+  "timestamp": "2026-02-02 05:10:10",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "따릉이 ‘회원정보 유출 의심’…개인정보위 조사 착수, 서울시설공단 비상대응 가동",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=204816",
+      "title": "Fortinet 제품 보안 업데이트 권고",
+      "link": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71956",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 85,
+        "score": 90,
         "why": [
-          "국내 공공서비스(따릉이) 개인정보 유출 의심 사건",
-          "개인정보위 공식 조사 착수로 심각성 확인",
-          "약 450만 건의 회원정보 유출 가능성"
+          "우리가 사용하는 Fortinet 네트워크 장비 취약점으로 보안 담당자가 즉시 대응해야 할 정보",
+          "CVE-2026-24858 인증우회 취약점으로 심각성 높음",
+          "FortiAnalyzer, FortiManager, FortiOS 등 다양한 제품 취약점 확인"
         ],
         "products_affected": [
-          "따릉이 앱"
+          "FortiAnalyzer",
+          "FortiManager",
+          "FortiOS",
+          "FortiProxy",
+          "FortiWeb"
         ],
         "tags": [
-          "Data Breach",
-          "Public Service",
-          "Personal Information"
+          "Vulnerability",
+          "CVE",
+          "Network Equipment",
+          "Authentication Bypass"
         ],
-        "summary_3lines": "🔴 높음 | 개인정보 유출 의심\n대상: 서울시 따릉이\n내용: 약 450만 건 회원정보 유출 가능성, 개인정보위 조사 착수"
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: Fortinet FortiAnalyzer/FortiManager/FortiOS/FortiProxy/FortiWeb\n설명: CVE-2026-24858 인증우회 취약점, 최신 버전으로 즉시 업데이트 필요"
       }
     }
   ]
