@@ -1,30 +1,28 @@
 {
-  "timestamp": "2026-02-03 10:20:23",
+  "timestamp": "2026-02-05 09:49:47",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "킬린, “MBC 해킹했다”... 침투 경로 “최신 웹 취약점” vs “VPN 탈취”",
-      "link": "http://www.boannews.com/media/view.asp?idx=141840&kind=1&sub_kind=",
+      "title": "쿠팡, 지난 해킹서 16만5000명 개인정보 추가 유출 확인",
+      "link": "http://www.boannews.com/media/view.asp?idx=141927&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 85,
+        "score": 90,
         "why": [
-          "국내 방송사 MBC를 대상으로 한 해킹 사고",
-          "국제 랜섬웨어 조직 킬린의 해킹 주장 확인",
-          "최신 웹 취약점(리액트2쉘) 관련 보안 위협 발견"
+          "국내 IT 기업(쿠팡)의 개인정보 유출 사고로 보안 동향 파악 필요",
+          "기사에 명시된 16만 5000명의 추가 개인정보 유출로 심각성 확인",
+          "주소록 정보(이름, 전화번호, 주소) 유출 확인"
         ],
         "products_affected": [
-          "MBC 웹사이트",
-          "React 프레임워크",
-          "Next.js"
+          "쿠팡"
         ],
         "tags": [
-          "랜섬웨어",
-          "웹 취약점",
-          "국내 기업 해킹"
+          "개인정보 유출",
+          "해킹",
+          "기업 보안"
         ],
-        "summary_3lines": "🔴 높음 | 해킹 위협\n대상: MBC 방송사\n설명: 킬린 랜섬웨어 그룹, 최신 웹 취약점이나 VPN 탈취로 침투 시도 가능성"
+        "summary_3lines": "🔴 높음 | 개인정보 유출\n대상: 쿠팡\n유출정보: 16만 5000명의 주소록 정보(이름, 전화번호, 주소) 추가 확인"
       }
     }
   ]
