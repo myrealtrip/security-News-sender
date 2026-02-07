@@ -1,27 +1,29 @@
 {
-  "timestamp": "2026-02-06 07:26:00",
+  "timestamp": "2026-02-07 07:43:56",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "[쿠팡 해킹] 최형두 의원, 美 향해 “아마존 中에 유출됐다면?”... 정부엔 신속 조사 촉구",
-      "link": "http://www.boannews.com/media/view.asp?idx=141947&kind=1&sub_kind=",
+      "title": "[단독] 무슬림 핵티비스트, 방위사업청·HD현대 공격 시도... “이스라엘 돕지마”",
+      "link": "http://www.boannews.com/media/view.asp?idx=141972&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 85,
         "why": [
-          "국내 대형 IT 기업인 쿠팡의 해킹 사고 관련 기사",
-          "국회의원이 해킹 사고와 관련된 공식 대응을 촉구하고 있음",
-          "개인정보 유출 가능성을 시사하는 내용 포함"
+          "국내 방위사업청과 HD현대에 대한 해킹 공격 시도",
+          "친팔레스타인 해커그룹 리퍼섹의 실제 해킹 시도 확인",
+          "디도스 공격으로 일시적 접속 오류 발생"
         ],
         "products_affected": [
-          "쿠팡"
+          "방위사업청 웹사이트",
+          "HD현대 웹사이트"
         ],
         "tags": [
-          "Hacking/Intrusion",
-          "Data Breach"
+          "Cyber Attack",
+          "DDoS",
+          "Hacktivism"
         ],
-        "summary_3lines": "🔴 높음 | 해킹, 정보유출 의혹\n대상: 쿠팡\n내용: 해킹 사고에 대한 국회의원의 공식 조사 촉구"
+        "summary_3lines": "🔴 높음 | 국가 기관/기업 공격 시도\n대상: 방위사업청, HD현대\n내용: 친팔레스타인 해커그룹 리퍼섹의 디도스 공격 시도, 일시적 접속 오류 발생"
       }
     }
   ]
