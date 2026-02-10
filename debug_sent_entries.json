@@ -1,29 +1,29 @@
 {
-  "timestamp": "2026-02-10 06:01:00",
+  "timestamp": "2026-02-10 09:28:29",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "[쿠팡 해킹] “배송지·현관 비번까지 털렸다” 쿠팡 3,300만 건 유출의 전말",
-      "link": "http://www.boannews.com/media/view.asp?idx=142046&kind=1&sub_kind=",
+      "title": "쿠팡 3,367만 건 개인정보 유출…“전자 출입증 위조, 서명키 방치” 기본 무너진 보안 참사",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=205090",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 95,
         "why": [
-          "국내 기업(쿠팡)의 대규모 해킹 사고로 3,300만 건 이상 개인정보 유출 확인",
-          "배송지, 현관 비밀번호 등 민감한 개인정보 유출",
-          "전직 개발자의 내부 인증 시스템 악용 사례",
-          "정부 기관의 공식 조사 결과 보도"
+          "국내 최대 전자상거래 플랫폼 쿠팡의 대규모 개인정보 유출 사건",
+          "3,367만 건의 성명/이메일 유출 및 1억 4천만 회 배송지 조회",
+          "내부자에 의한 구조적 보안 취약점 확인",
+          "ISMS-P 인증 기업의 심각한 보안 실패 사례"
         ],
         "products_affected": [
-          "쿠팡 이용자 정보 시스템"
+          "쿠팡"
         ],
         "tags": [
-          "Hacking/Intrusion",
-          "Data Breach",
-          "Personal Information Leak"
+          "개인정보 유출",
+          "내부자 위협",
+          "인증 취약점"
         ],
-        "summary_3lines": "🔴 높음 | 해킹, 대규모 정보유출\n대상: 쿠팡\n유출정보: 3,367만 건 이용자 정보 (이름, 이메일, 배송지, 현관 비밀번호 포함)"
+        "summary_3lines": "🔴 높음 | 대규모 개인정보 유출\n대상: 쿠팡\n내용: 3,367만 건 개인정보 유출, 서명키 관리 실패, 전자 출입증 위조"
       }
     }
   ]
