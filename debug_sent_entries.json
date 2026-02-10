@@ -1,29 +1,29 @@
 {
-  "timestamp": "2026-02-07 07:43:56",
+  "timestamp": "2026-02-10 06:01:00",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "[단독] 무슬림 핵티비스트, 방위사업청·HD현대 공격 시도... “이스라엘 돕지마”",
-      "link": "http://www.boannews.com/media/view.asp?idx=141972&kind=1&sub_kind=",
+      "title": "[쿠팡 해킹] “배송지·현관 비번까지 털렸다” 쿠팡 3,300만 건 유출의 전말",
+      "link": "http://www.boannews.com/media/view.asp?idx=142046&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 85,
+        "score": 95,
         "why": [
-          "국내 방위사업청과 HD현대에 대한 해킹 공격 시도",
-          "친팔레스타인 해커그룹 리퍼섹의 실제 해킹 시도 확인",
-          "디도스 공격으로 일시적 접속 오류 발생"
+          "국내 기업(쿠팡)의 대규모 해킹 사고로 3,300만 건 이상 개인정보 유출 확인",
+          "배송지, 현관 비밀번호 등 민감한 개인정보 유출",
+          "전직 개발자의 내부 인증 시스템 악용 사례",
+          "정부 기관의 공식 조사 결과 보도"
         ],
         "products_affected": [
-          "방위사업청 웹사이트",
-          "HD현대 웹사이트"
+          "쿠팡 이용자 정보 시스템"
         ],
         "tags": [
-          "Cyber Attack",
-          "DDoS",
-          "Hacktivism"
+          "Hacking/Intrusion",
+          "Data Breach",
+          "Personal Information Leak"
         ],
-        "summary_3lines": "🔴 높음 | 국가 기관/기업 공격 시도\n대상: 방위사업청, HD현대\n내용: 친팔레스타인 해커그룹 리퍼섹의 디도스 공격 시도, 일시적 접속 오류 발생"
+        "summary_3lines": "🔴 높음 | 해킹, 대규모 정보유출\n대상: 쿠팡\n유출정보: 3,367만 건 이용자 정보 (이름, 이메일, 배송지, 현관 비밀번호 포함)"
       }
     }
   ]
