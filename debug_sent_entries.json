@@ -1,35 +1,50 @@
 {
-  "timestamp": "2026-02-11 09:51:35",
+  "timestamp": "2026-02-12 01:42:27",
   "total_articles": 20,
-  "sent_count": 1,
+  "sent_count": 2,
   "sent_articles": [
     {
-      "title": "MS 2월 보안 위협에 따른 정기 보안 업데이트 권고",
-      "link": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71965",
+      "title": "민관합동조사단이 ‘현관 비번 실제 조회 2609건’ 누락?... “쿠팡 주장 틀려”",
+      "link": "http://www.boannews.com/media/view.asp?idx=142129&kind=1&sub_kind=",
+      "ai_judgment": {
+        "decision": "SCRAPE",
+        "score": 85,
+        "why": [
+          "쿠팡 해킹 사건의 추가 정보를 담고 있는 기사",
+          "민관합동조사단과 쿠팡 간의 개인정보 유출 규모 해석 차이 보도",
+          "공동현관 비밀번호 조회 건수에 대한 중요한 논점 확인"
+        ],
+        "products_affected": [
+          "쿠팡"
+        ],
+        "tags": [
+          "개인정보 유출",
+          "쿠팡 해킹",
+          "민관합동조사단"
+        ],
+        "summary_3lines": "🔴 높음 | 개인정보 유출 논란\n대상: 쿠팡\n내용: 민관합동조사단-쿠팡 간 현관 비밀번호 유출 규모 해석 차이"
+      }
+    },
+    {
+      "title": "[쿠팡 해킹] “2300개 IP로 3367만명 공격”... 이게 혼자서 가능?",
+      "link": "http://www.boannews.com/media/view.asp?idx=142112&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 90,
         "why": [
-          "우리가 사용하는 Windows와 Microsoft Office 시스템의 취약점 발견",
-          "총 92개의 취약점 중 다수가 Windows, Office, Azure, Exchange 등 주요 제품군에 해당",
-          "긴급(Critical) 1종, 중요(Important) 15종의 보안 업데이트 권고"
+          "국내 대표 기업인 쿠팡의 대규모 해킹 사고로 보안 담당자가 반드시 인지해야 할 사건",
+          "3367만 명의 대규모 개인정보 유출로 심각성 확인",
+          "내부 취약점 악용 및 체계적인 해킹 수법 분석 필요"
         ],
         "products_affected": [
-          "Windows 11",
-          "Windows Server 2025/2022/2019/2016",
-          "Microsoft Office",
-          "Microsoft SharePoint",
-          "Microsoft Exchange Server",
-          "Microsoft SQL Server",
-          "Azure"
+          "쿠팡"
         ],
         "tags": [
-          "Vulnerability",
-          "Microsoft",
-          "Windows",
-          "Azure"
+          "Data Breach",
+          "Hacking/Intrusion",
+          "Corporate Security"
         ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: Windows 11, Windows Server, Microsoft Office, Azure\n내용: 총 92개 취약점 발견 - 권한 상승, 원격 코드 실행, 정보 유출 등"
+        "summary_3lines": "🔴 높음 | 해킹, 대규모 정보유출\n대상: 쿠팡\n내용: 2300개 IP로 3367만 명 계정 공격, 1억4000만건 조회"
       }
     }
   ]
