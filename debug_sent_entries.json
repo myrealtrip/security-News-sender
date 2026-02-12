@@ -1,50 +1,29 @@
 {
-  "timestamp": "2026-02-12 01:42:27",
+  "timestamp": "2026-02-12 04:21:15",
   "total_articles": 20,
-  "sent_count": 2,
+  "sent_count": 1,
   "sent_articles": [
     {
-      "title": "민관합동조사단이 ‘현관 비번 실제 조회 2609건’ 누락?... “쿠팡 주장 틀려”",
-      "link": "http://www.boannews.com/media/view.asp?idx=142129&kind=1&sub_kind=",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 85,
-        "why": [
-          "쿠팡 해킹 사건의 추가 정보를 담고 있는 기사",
-          "민관합동조사단과 쿠팡 간의 개인정보 유출 규모 해석 차이 보도",
-          "공동현관 비밀번호 조회 건수에 대한 중요한 논점 확인"
-        ],
-        "products_affected": [
-          "쿠팡"
-        ],
-        "tags": [
-          "개인정보 유출",
-          "쿠팡 해킹",
-          "민관합동조사단"
-        ],
-        "summary_3lines": "🔴 높음 | 개인정보 유출 논란\n대상: 쿠팡\n내용: 민관합동조사단-쿠팡 간 현관 비밀번호 유출 규모 해석 차이"
-      }
-    },
-    {
-      "title": "[쿠팡 해킹] “2300개 IP로 3367만명 공격”... 이게 혼자서 가능?",
-      "link": "http://www.boannews.com/media/view.asp?idx=142112&kind=1&sub_kind=",
+      "title": "포티넷 샌드박스 뚫리면 끝... XSS 취약점 ‘비상’",
+      "link": "http://www.boannews.com/media/view.asp?idx=142137&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 90,
         "why": [
-          "국내 대표 기업인 쿠팡의 대규모 해킹 사고로 보안 담당자가 반드시 인지해야 할 사건",
-          "3367만 명의 대규모 개인정보 유출로 심각성 확인",
-          "내부 취약점 악용 및 체계적인 해킹 수법 분석 필요"
+          "FortiGate는 우리가 사용하는 네트워크 장비로 보안 담당자가 인지해야 할 취약점",
+          "치명적인 XSS 취약점으로 관리자 권한 탈취 및 원격 코드 실행(RCE) 가능성 확인",
+          "CVE 번호(CVE-2025-52436)가 명시된 실제 취약점 기사"
         ],
         "products_affected": [
-          "쿠팡"
+          "FortiSandbox"
         ],
         "tags": [
-          "Data Breach",
-          "Hacking/Intrusion",
-          "Corporate Security"
+          "Vulnerability",
+          "CVE",
+          "Network Equipment",
+          "XSS"
         ],
-        "summary_3lines": "🔴 높음 | 해킹, 대규모 정보유출\n대상: 쿠팡\n내용: 2300개 IP로 3367만 명 계정 공격, 1억4000만건 조회"
+        "summary_3lines": "🔴 높음 | 취약점(긴급 보안업데이트 필요)\n대상: 포티샌드박스 4.4 및 5.0 시리즈\n설명: 웹 페이지 취약점으로 관리자 권한 탈취, 원격 코드 실행 가능"
       }
     }
   ]
