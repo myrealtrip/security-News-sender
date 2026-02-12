@@ -1,52 +1,33 @@
 {
-  "timestamp": "2026-02-12 06:34:09",
+  "timestamp": "2026-02-12 08:22:26",
   "total_articles": 20,
-  "sent_count": 2,
+  "sent_count": 1,
   "sent_articles": [
     {
-      "title": "360억 과징금 폭탄 맞은 명품업계, ‘정보보호’는 명품 아니었다",
-      "link": "http://www.boannews.com/media/view.asp?idx=142145&kind=1&sub_kind=",
+      "title": "아이폰·맥 전반 보안 위협…애플, CVE-2026-20700 임의코드 실행 제로데이 취약점 수정",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=205162",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 90,
         "why": [
-          "내부자에 의한 개인정보 유출 사건으로 개인정보보호법 위반",
-          "루이비통, 디올, 티파니 등 3개 기업에 총 360억 과징금 부과",
-          "SaaS 기반 고객관리 서비스에서 보안 허점 발견",
-          "360만명, 195만명, 4,600명의 고객 정보 유출",
-          "IP 제한 및 2단계 인증 부재가 주요 원인"
+          "우리가 사용하는 시스템(Apple) 취약점으로 보안 담당자가 인지해야 할 중요한 정보",
+          "CVE-2026-20700 취약점으로 임의 코드 실행 가능성 확인",
+          "표적형 공격에 이미 악용된 제로데이 취약점으로 심각성 높음"
         ],
         "products_affected": [
-          "SaaS 고객관리 서비스"
+          "iPhone 11+",
+          "iPad Pro",
+          "iPad Air",
+          "MacOS Tahoe"
         ],
         "tags": [
-          "개인정보 유출",
-          "SaaS 보안",
-          "개인정보보호법"
+          "Vulnerability",
+          "Zero-Day",
+          "Apple",
+          "iOS",
+          "macOS"
         ],
-        "summary_3lines": "🔴 높음 | 개인정보 유출\n대상: 루이비통, 디올, 티파니\n내용: SaaS 서비스 보안 취약점으로 총 360억 원 과징금, 고객 정보 560만 건 유출"
-      }
-    },
-    {
-      "title": "[쿠팡 해킹] “성인용품 주문자 협박? 사실 무근인데 언급돼 유감”... 쿠팡 항변",
-      "link": "http://www.boannews.com/media/view.asp?idx=142147&kind=1&sub_kind=",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 85,
-        "why": [
-          "쿠팡의 개인정보 유출 사고와 관련된 후속 기사",
-          "실제 해킹 사고에 대한 추가 정보 확인",
-          "해킹으로 인한 2차 피해 가능성 논의"
-        ],
-        "products_affected": [
-          "쿠팡"
-        ],
-        "tags": [
-          "해킹",
-          "개인정보 유출",
-          "2차 피해"
-        ],
-        "summary_3lines": "🔴 높음 | 해킹 후속 사고\n대상: 쿠팡\n내용: 성인용품 주문자 협박 의혹에 대한 쿠팡의 공식 부인"
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 긴급 권고)\n대상: 아이폰 11 이후, 맥 모델, iPadOS/macOS Tahoe\n설명: 다이엘디(dyld) 컴포넌트 임의 코드 실행 취약점, 국가 지원 해킹 조직 공격에 악용 가능성"
       }
     }
   ]
