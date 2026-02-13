@@ -1,29 +1,29 @@
 {
-  "timestamp": "2026-02-13 05:52:03",
+  "timestamp": "2026-02-13 06:30:54",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "‘CVE-2026-25881’ 취약점, 샌드박스JS 보호막 무력화",
-      "link": "http://www.boannews.com/media/view.asp?idx=142170&kind=1&sub_kind=",
+      "title": "[단독] 금융권, 디도스 주의보 발령...무슬림 해킹그룹, 신한은행·하나금융 공격",
+      "link": "http://www.boannews.com/media/view.asp?idx=142172&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 85,
         "why": [
-          "샌드박스JS 취약점은 널리 사용되는 자바스크립트 라이브러리의 중요한 취약점",
-          "CVE-2026-25881로 추적되는 실제 취약점",
-          "CVSS 점수 8.3점의 중대한 위험도 확인",
-          "원격코드실행(RCE) 공격 가능성으로 심각성 높음"
+          "국내 금융기관(신한은행, 하나금융그룹)을 대상으로 한 디도스 공격 사건",
+          "무슬림 해킹그룹 '리퍼섹'의 공격으로 금융보안원과 금융감독원이 주의보 발령",
+          "실제 공격 발생 및 해당 기관에 대한 구체적인 상황 기술"
         ],
         "products_affected": [
-          "SandboxJS"
+          "신한은행",
+          "하나금융그룹"
         ],
         "tags": [
-          "Vulnerability",
-          "CVE",
-          "JavaScript Library"
+          "DDoS",
+          "Cyber Attack",
+          "Financial Sector"
         ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: 샌드박스JS 0.8.30 이전 버전\n설명: 프로토타입 오염을 통한 샌드박스 탈출로 원격코드실행 위험"
+        "summary_3lines": "🔴 높음 | 해킹/사이버 공격\n대상: 신한은행, 하나금융그룹\n내용: 무슬림 해킹그룹 '리퍼섹'의 HTTP 2.0 프로토콜 L7 디도스 공격"
       }
     }
   ]
