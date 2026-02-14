@@ -1,55 +1,30 @@
 {
-  "timestamp": "2026-02-13 07:53:12",
+  "timestamp": "2026-02-14 07:45:47",
   "total_articles": 20,
-  "sent_count": 2,
+  "sent_count": 1,
   "sent_articles": [
     {
-      "title": "WordPress 플러그인 보안 업데이트 권고",
-      "link": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71971",
+      "title": "MS 아웃룩 추가 기능 악용한 최초의 사례... 4000개 MS 계정 탈취",
+      "link": "http://www.boannews.com/media/view.asp?idx=142224&kind=1&sub_kind=",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 85,
+        "score": 95,
         "why": [
-          "WordPress 플러그인의 실제 취약점(CVE-2026-1357) 발견",
-          "임의 파일 업로드 취약점으로 보안 위험성 확인",
-          "보안 업데이트 권고 내용 포함"
+          "Microsoft Outlook 추가 기능 악용 실제 사례",
+          "약 4000개 MS 계정 정보 탈취 확인",
+          "보안 업체 코이 시큐리티가 최초 사례로 발표",
+          "우리가 사용하는 제품(Office 365) 관련 취약점"
         ],
         "products_affected": [
-          "WPvivid Backup & Migration"
+          "Microsoft Outlook",
+          "Microsoft Office 365"
         ],
         "tags": [
-          "Vulnerability",
-          "CVE",
-          "WordPress Plugin"
+          "취약점",
+          "계정 탈취",
+          "악성 추가 기능"
         ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: WPvivid Backup & Migration 플러그인 0.9.123 이하\n설명: 인증 없는 임의 파일 업로드 취약점, 최신 버전 0.9.124로 업데이트 필요"
-      }
-    },
-    {
-      "title": "Apple 제품 보안 업데이트 권고",
-      "link": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=71969",
-      "ai_judgment": {
-        "decision": "SCRAPE",
-        "score": 85,
-        "why": [
-          "실제 취약점(CVE) 기사로 보안 담당자가 인지해야 할 중요한 정보",
-          "임의 코드 실행 취약점(CVE-2026-20700)으로 심각성 확인",
-          "iOS, iPadOS 등 광범위한 Apple 제품군에 영향"
-        ],
-        "products_affected": [
-          "iOS 26.3 미만",
-          "iPadOS 26.3 미만",
-          "macOS Tahoe 26.3 미만",
-          "visionOS 26.3 미만",
-          "tvOS 26.3 미만",
-          "watchOS 26.3 미만"
-        ],
-        "tags": [
-          "Vulnerability",
-          "CVE",
-          "Apple"
-        ],
-        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: iOS, iPadOS, macOS Tahoe 등 Apple 제품군\n설명: CVE-2026-20700 취약점으로 임의 코드 실행 위험"
+        "summary_3lines": "🔴 높음 | Microsoft Office 365 보안 취약점\n대상: Microsoft Outlook 추가 기능 '어그리투 스틸'\n약 4000개 이상의 MS 계정 정보 탈취 확인됨"
       }
     }
   ]
