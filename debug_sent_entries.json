@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-02-18 15:25:09",
+  "timestamp": "2026-02-18 23:43:53",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "델 리커버포인트 제로데이 취약점...18개월간 중국 연계 해킹그룹이 공격에 악용",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=205230",
+      "title": "“호텔·콜센터 VoIP 전화기 뚫렸다”…그랜드스트림 GXP1600 치명적 취약점, 통화 도청·내부 침투까지 가능",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=205233",
       "ai_judgment": {
         "decision": "SCRAPE",
         "score": 90,
         "why": [
-          "델(Dell) 리커버포인트의 중대한 제로데이 취약점 발견",
-          "CVE-2026-22769, CVSS 10.0의 최고 위험도 취약점",
-          "중국 연계 해킹그룹의 18개월간 장기 공격 확인"
+          "VoIP 전화기의 치명적인 원격 코드 실행(RCE) 취약점 발견",
+          "CVSS 9.3점의 심각한 취약점으로 루트 권한 탈취 가능",
+          "중소기업과 호텔, 콜센터 등 널리 사용되는 장비에 영향"
         ],
         "products_affected": [
-          "Dell RecoverPoint for Virtual Machines"
+          "Grandstream GXP1600 시리즈"
         ],
         "tags": [
           "Vulnerability",
-          "Zero-Day",
-          "CVE"
+          "VoIP",
+          "RCE"
         ],
-        "summary_3lines": "🔴 높음 | 제로데이 취약점 (긴급 대응 필요)\n대상: Dell RecoverPoint for Virtual Machines 6.0.3.1 HF1 이전\n설명: 하드코딩된 관리자 계정으로 인한 원격 인증 우회 및 루트 권한 탈취 취약점"
+        "summary_3lines": "🔴 높음 | 취약점 (보안업데이트 권고)\n대상: 그랜드스트림 GXP1600 시리즈 VoIP 전화기\n설명: 인증 없이 원격 코드 실행 및 루트 권한 탈취 가능한 심각한 취약점"
       }
     }
   ]
