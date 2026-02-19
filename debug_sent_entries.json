@@ -1,29 +1,28 @@
 {
-  "timestamp": "2026-02-19 04:20:24",
+  "timestamp": "2026-02-19 16:25:38",
   "total_articles": 20,
   "sent_count": 1,
   "sent_articles": [
     {
-      "title": "[AI와 보안] 마이크로소프트 코파일럿, 사내 기밀 이메일 접근하는 오류 발견",
-      "link": "http://www.boannews.com/media/view.asp?idx=142301&kind=1&sub_kind=",
+      "title": "허니웰 CCTV 치명적 취약점 주의…인증 없이 계정 탈취 가능, 사용 기관 대응 시급",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=205271",
       "ai_judgment": {
         "decision": "SCRAPE",
-        "score": 85,
+        "score": 90,
         "why": [
-          "Microsoft Office 365와 관련된 실제 취약점 발견",
-          "코파일럿의 기밀 이메일 무단 접근 오류 확인",
-          "기업 내부 정보보안에 직접적인 영향을 미치는 취약점"
+          "널리 사용되는 CCTV 제품의 심각한 취약점으로 보안 담당자가 인지해야 할 중요 정보",
+          "CVE-2026-1670로 등록된 실제 취약점으로 치명도 점수 9.8점",
+          "산업 현장 및 시설 보안에 직접적인 영향을 미치는 취약점"
         ],
         "products_affected": [
-          "Microsoft Copilot",
-          "Office 365"
+          "Honeywell CCTV"
         ],
         "tags": [
           "Vulnerability",
-          "AI Security",
-          "Data Leak"
+          "CCTV",
+          "Access Control"
         ],
-        "summary_3lines": "🔴 높음 | AI 취약점 발견\n대상: Microsoft 코파일럿 (Office 365)\n내용: 기밀 라벨 메일 무단 접근 및 요약 오류 발생"
+        "summary_3lines": "🔴 높음 | 취약점(보안업데이트 권고)\n대상: 허니웰 CCTV 4개 모델\n설명: 인증 우회로 관리자 계정 탈취 및 카메라 영상 접근 가능, CVE-2026-1670"
       }
     }
   ]
